@@ -329,19 +329,6 @@
   .footer-inner a{color:var(--mint);text-decoration:none;font-weight:600}
   .footer-inner a:hover{text-decoration:underline}
   @media(max-width:620px){.footer-inner{flex-direction:column;text-align:center}}
-  /* ---------- WhatsApp flotante ---------- */
-  .whatsapp-float{
-    position:fixed;bottom:22px;right:22px;z-index:60;
-    width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 6px 20px rgba(19,34,62,.28);
-    animation:wa-pulse 2.4s ease-in-out infinite;
-  }
-  .whatsapp-float:hover{background:#1EBE5A}
-  @keyframes wa-pulse{
-    0%,100%{box-shadow:0 6px 20px rgba(19,34,62,.28)}
-    50%{box-shadow:0 6px 20px rgba(19,34,62,.28), 0 0 0 8px rgba(37,211,102,.18)}
-  }
 </style>
 </head>
 <body>
@@ -550,7 +537,6 @@
       <h2 class="section-title">¡Trabajemos juntos!</h2>
       <p class="section-intro">¿Buscás capacitación para tu equipo docente? ¿Necesitás diseñar una experiencia de aprendizaje innovadora? Me encantaría conocer tu proyecto y acompañarte en la transformación educativa que tu institución necesita.</p>
       <ul class="contact-links">
-        <li>💬 <a href="https://wa.me/5492995322625?text=Hola%20Rosina%2C%20quiero%20consultarte%20sobre%20una%20capacitaci%C3%B3n" target="_blank" rel="noopener">WhatsApp — +54 9 2995 32-2625</a></li>
         <li>📧 <a href="mailto:lic.rosinabastidas@gmail.com">lic.rosinabastidas@gmail.com</a></li>
         <li>💼 <a href="https://www.linkedin.com/in/rosina-bastidas/" target="_blank" rel="noopener">LinkedIn — @rosina-bastidas</a></li>
       </ul>
@@ -604,8 +590,5 @@
     a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open'));
   });
 </script>
-<a class="whatsapp-float" href="https://wa.me/5492995322625?text=Hola%20Rosina%2C%20quiero%20consultarte%20sobre%20una%20capacitaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.386.7 4.61 1.906 6.478L4 29l7.72-1.865A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.818c-1.98 0-3.837-.55-5.42-1.503l-.389-.23-4.58 1.106 1.128-4.463-.253-.398A9.78 9.78 0 0 1 5.19 15c0-5.965 4.85-10.818 10.814-10.818 5.965 0 10.814 4.853 10.814 10.818 0 5.965-4.85 10.818-10.814 10.818zm5.94-8.106c-.325-.163-1.92-.947-2.218-1.056-.298-.108-.515-.163-.732.163-.217.325-.84 1.056-1.03 1.273-.19.217-.38.244-.705.081-.325-.163-1.372-.505-2.613-1.610-.966-.86-1.618-1.923-1.808-2.248-.19-.325-.02-.5.143-.663.147-.146.325-.38.488-.57.163-.19.217-.325.325-.542.108-.217.054-.407-.027-.57-.081-.163-.732-1.763-1.003-2.414-.264-.634-.532-.548-.732-.558-.19-.009-.407-.011-.624-.011-.217 0-.57.081-.868.407-.298.325-1.138 1.112-1.138 2.712 0 1.6 1.165 3.146 1.328 3.363.163.217 2.294 3.504 5.56 4.913.777.336 1.383.536 1.856.686.78.248 1.489.213 2.05.129.625-.093 1.92-.785 2.19-1.543.271-.759.271-1.409.19-1.544-.081-.135-.298-.217-.623-.38z"/></svg>
-</a>
 </body>
 </html>
