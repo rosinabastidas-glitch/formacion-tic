@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Training — IA y TIC para instituciones educativas</title>
+<meta name="description" content="Capacitaciones, talleres y recursos de inteligencia artificial para docentes e instituciones educativas. Formación con enfoque humano, práctico y centrado en el estudiante.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231E5AA8'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-weight='800' font-size='28' fill='white' text-anchor='middle'%3ERB%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph / redes sociales -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Tech Training — IA y TIC para instituciones educativas">
+<meta property="og:description" content="Capacitaciones, talleres y recursos de inteligencia artificial para docentes e instituciones educativas de Neuquén y toda Argentina.">
+<meta property="og:url" content="https://rosinabastidas-glitch.github.io/tech-training/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tech Training — IA y TIC para instituciones educativas">
+<meta name="twitter:description" content="Capacitaciones, talleres y recursos de inteligencia artificial para docentes e instituciones educativas de Neuquén y toda Argentina.">
+
+<!-- Datos estructurados para buscadores -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rosina Bastidas",
+  "jobTitle": "Formadora docente en TIC e IA",
+  "description": "Licenciada en Tecnología Educativa y Magíster en Enseñanza en Escenarios Digitales. Capacita a docentes e instituciones educativas en IA, STEAM y pensamiento computacional.",
+  "address": {"@type": "PostalAddress", "addressRegion": "Neuquén", "addressCountry": "AR"},
+  "email": "mailto:lic.rosinabastidas@gmail.com",
+  "sameAs": ["https://www.linkedin.com/in/rosina-bastidas/"],
+  "knowsAbout": ["Inteligencia Artificial en educación", "STEAM", "Pensamiento computacional", "Formación docente", "Robótica educativa"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#13223E;
+    --pine:#1E5AA8;
+    --pine-dark:#153F7A;
+    --mint:#E3EDF8;
+    --mint-soft:#F2F7FC;
+    --paper:#FAFCFE;
+    --chalk:#E23D8E;
+    --chalk-soft:#FBE3EF;
+    --muted:#5B6A80;
+    --line:#D5E0EC;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(19,34,62,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.65;
+    font-size:16px;
+  }
+  h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.15}
+  a{color:var(--pine)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--chalk);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.78rem;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--pine);
+    background:var(--mint);padding:.35rem .75rem;border-radius:999px;margin-bottom:1rem;
+  }
+  section{padding:5rem 0}
+  .section-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;margin-bottom:.6rem}
+  .section-intro{color:var(--muted);max-width:620px;margin-bottom:2.5rem}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(251,252,250,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:'Caveat',cursive;font-weight:700;font-size:1.7rem;color:var(--ink);text-decoration:none}
+  .nav-links{display:flex;gap:1.5rem;list-style:none}
+  .nav-links a{color:var(--ink);text-decoration:none;font-size:.92rem;font-weight:500}
+  .nav-links a:hover{color:var(--pine)}
+  .nav-cta{
+    background:var(--pine);color:#fff!important;padding:.5rem 1rem;border-radius:999px;
+    font-weight:600;
+  }
+  .nav-cta:hover{background:var(--pine-dark)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:.4rem .6rem;font-size:1.2rem;cursor:pointer;color:var(--ink)}
+  @media(max-width:820px){
+    .nav-links{
+      display:none;position:absolute;top:64px;left:0;right:0;background:var(--paper);
+      flex-direction:column;padding:1.2rem 24px;gap:1rem;border-bottom:1px solid var(--line);
+    }
+    .nav-links.open{display:flex}
+    .menu-btn{display:block}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:5.5rem 0 4.5rem;background:linear-gradient(180deg,var(--mint-soft),var(--paper));position:relative;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none;animation:float 9s ease-in-out infinite}
+  .blob-pink{width:340px;height:340px;background:var(--chalk);opacity:.16;top:-120px;right:-60px}
+  .blob-blue{width:280px;height:280px;background:var(--pine);opacity:.14;bottom:-100px;left:-80px;animation-delay:-4s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-.01em;margin:.8rem 0 1.2rem}
+  .hero h1 em{font-style:normal;color:var(--pine);position:relative;white-space:nowrap}
+  .hero h1 em::after{
+    content:"";position:absolute;left:0;right:0;bottom:.08em;height:.34em;
+    background:var(--chalk);opacity:.3;z-index:-1;border-radius:3px;
+  }
+  .hero p.lead{color:var(--muted);font-size:1.08rem;max-width:540px;margin-bottom:2rem}
+  .cta-row{display:flex;gap:.9rem;flex-wrap:wrap}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;
+    padding:.85rem 1.5rem;border-radius:999px;transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--pine);color:#fff}
+  .btn-primary:hover{background:var(--pine-dark)}
+  .btn-ghost{border:1.5px solid var(--pine);color:var(--pine)}
+  .btn-ghost:hover{background:var(--mint)}
+  .hero-stats{display:flex;gap:2.2rem;margin-top:2.6rem;flex-wrap:wrap}
+  .stat b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:1.7rem;font-weight:800;color:var(--pine)}
+  .stat small{color:var(--muted);font-size:.82rem}
+
+  /* Foto del hero (firma visual) */
+  .hero-photo{position:relative;max-width:190px;margin:0 auto}
+  .hero-photo img{
+    width:100%;display:block;border-radius:var(--radius);box-shadow:var(--shadow);
+    aspect-ratio:4/5;object-fit:cover;border:6px solid #fff;
+  }
+  .hero-photo-badge{
+    position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;
+    background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+    padding:.5rem 1rem;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--ink);
+  }
+  @media(max-width:820px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-photo{max-width:190px;margin-top:1rem}
+  }
+
+  /* Franja de prueba social */
+  .trustbar{background:#fff;border-bottom:1px solid var(--line)}
+  .trustbar-inner{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;padding:1.1rem 0}
+  .trustbar-label{
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);white-space:nowrap;
+  }
+  .trustbar-items{display:flex;align-items:center;gap:1.8rem;flex-wrap:wrap}
+  .trustbar-items span{font-weight:600;font-size:.88rem;color:#31405C}
+  .trustbar-logo{height:26px;width:auto;object-fit:contain;filter:grayscale(15%)}
+
+  /* ---------- Sobre mí ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+  .about-grid p{margin-bottom:1rem;color:#31405C}
+  .pill-list{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;list-style:none}
+  .pill-list li{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem;
+    font-size:.9rem;font-weight:500;
+  }
+  .pill-list li span{display:block;font-size:1.3rem;margin-bottom:.3rem}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+
+  /* ---------- Proyectos ---------- */
+  #proyectos{background:var(--paper)}
+  .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+  .project-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:1.5rem;display:flex;flex-direction:column;gap:1.2rem;
+  }
+  .project-card:nth-child(2){border-radius:34px 12px 34px 12px}
+  .project-card:nth-child(2) .project-media{border-radius:22px 8px 22px 8px}
+  .project-media{
+    background:linear-gradient(155deg,var(--ink),var(--pine-dark));border-radius:14px;
+    aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  }
+  .project-media--lostsignal{background:linear-gradient(155deg,#1B0F2E,#7A2148)}
+  .project-media-inner{text-align:center;color:#fff}
+  .project-emoji{font-size:2.6rem;display:block;margin-bottom:.7rem}
+  .project-hud{
+    display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  }
+  .project-hud span{background:rgba(255,255,255,.12);padding:.3rem .6rem;border-radius:999px}
+  .project-info h3{font-size:1.22rem;margin:.2rem 0 .5rem}
+  .project-info p{color:var(--muted);margin-bottom:1.2rem;font-size:.92rem}
+  @media(max-width:820px){
+    .projects-grid{grid-template-columns:1fr}
+  }
+
+  .profile-card{display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem}
+  .profile-photo{width:88px;height:88px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:var(--shadow)}
+  .profile-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.15rem}
+  .profile-role{color:var(--muted);font-size:.85rem}
+
+  /* ---------- Capacitaciones ---------- */
+  #capacitaciones{background:var(--mint-soft)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.6rem;display:flex;flex-direction:column;box-shadow:var(--shadow);
+    transition:transform .15s ease;
+  }
+  .card:nth-child(3n+2){border-radius:34px 12px 34px 12px}
+  .card:nth-child(3n+3){border-radius:12px 34px 12px 34px}
+  .card:hover{transform:translateY(-4px)}
+  .card h3{font-size:1.12rem;margin:.4rem 0 .6rem}
+  .card p{color:var(--muted);font-size:.92rem;flex:1}
+  .tag-row{display:flex;gap:.45rem;flex-wrap:wrap;margin:1rem 0 1.2rem}
+  .tag{
+    font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.03em;
+    background:var(--mint);color:var(--pine-dark);padding:.25rem .6rem;border-radius:999px;
+  }
+  .tag.warn{background:var(--chalk-soft);color:#A81E66}
+  .card .btn{text-align:center}
+  .icon-circle{
+    width:44px;height:44px;border-radius:50%;background:var(--mint);
+    display:flex;align-items:center;justify-content:center;font-size:1.25rem;
+  }
+  @media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.cards{grid-template-columns:1fr}}
+
+  /* ---------- Galería de talleres (polaroid) ---------- */
+  #talleres-fotos{background:var(--mint-soft)}
+  .polaroid-gallery{display:flex;gap:2.2rem;flex-wrap:wrap;justify-content:center;padding:1.5rem 0 .5rem}
+  .polaroid{
+    background:#fff;padding:.7rem .7rem 2.6rem;box-shadow:var(--shadow);
+    width:230px;border-radius:4px;transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .polaroid:nth-child(1){transform:rotate(-4deg)}
+  .polaroid:nth-child(2){transform:rotate(3deg)}
+  .polaroid:nth-child(3){transform:rotate(-2deg)}
+  .polaroid:hover{transform:rotate(0deg) scale(1.04);box-shadow:0 16px 34px rgba(19,34,62,.16);z-index:2}
+  .polaroid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;display:block}
+  .polaroid figcaption{
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.7rem;
+  }
+  .polaroid-empty{background:#F5F8FC}
+  .polaroid-placeholder{
+    aspect-ratio:4/3;border:2px dashed var(--line);border-radius:2px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:.5rem;text-align:center;color:var(--muted);
+  }
+  .polaroid-placeholder .ph-icon{font-size:1.8rem}
+  .polaroid-placeholder .ph-text{font-size:.72rem;padding:0 1rem;line-height:1.4}
+  @media(max-width:620px){.polaroid{width:78vw;max-width:280px}}
+
+  /* ---------- Recursos IA ---------- */
+  .resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+  .resource{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.5rem;box-shadow:var(--shadow);
+  }
+  .resource:nth-child(even){border-radius:34px 12px 34px 12px}
+  .resource-header{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.6rem}
+  .resource h3{font-size:1.05rem}
+  .badge{
+    font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:600;
+    padding:.28rem .65rem;border-radius:999px;white-space:nowrap;
+  }
+  .badge.free{background:var(--mint);color:var(--pine-dark)}
+  .badge.premium{background:var(--ink);color:var(--chalk)}
+  .resource p{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+  .prompt-sample{
+    font-family:'JetBrains Mono',monospace;font-size:.74rem;background:var(--mint-soft);
+    border:1px dashed var(--line);border-radius:10px;padding:.7rem .8rem;color:#2E4062;
+    margin-bottom:1rem;
+  }
+  .resource a{font-weight:600;font-size:.9rem;text-decoration:none}
+  @media(max-width:820px){.resource-grid{grid-template-columns:1fr}}
+
+  /* ---------- Trayectoria ---------- */
+  .track{display:grid;gap:1.1rem}
+  .track-item{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.4rem;
+    display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;
+  }
+  .track-item h3{font-size:1rem;margin-bottom:.25rem}
+  .track-item p{color:var(--muted);font-size:.88rem}
+  .impact{
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--pine-dark);
+    background:var(--mint);padding:.4rem .8rem;border-radius:999px;white-space:nowrap;
+  }
+  @media(max-width:680px){
+    .track-item{grid-template-columns:1fr}
+    .impact{justify-self:start}
+  }
+
+  /* ---------- Contacto ---------- */
+  #contacto{background:var(--ink);color:#EAF3EE;border-radius:32px 32px 0 0}
+  #contacto .section-title{color:#fff}
+  #contacto .section-intro{color:#B9C7DC}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+  .contact-links{list-style:none;display:grid;gap:.9rem;margin-top:1.5rem}
+  .contact-links a{color:var(--chalk);text-decoration:none;font-weight:600}
+  .contact-links li{font-size:.95rem}
+  .contact-box{
+    background:#1B3055;border:1px solid #2C4A7A;border-radius:var(--radius);padding:2rem;
+  }
+  .contact-box h3{color:#fff;font-size:1.2rem;margin-bottom:.8rem}
+  .contact-box p{color:#B9C7DC;font-size:.92rem;margin-bottom:1.4rem}
+  .contact-form{display:grid;gap:.9rem}
+  .contact-form label{display:grid;gap:.35rem;font-size:.85rem;color:#EAF3EE;font-weight:600}
+  .contact-form input,.contact-form select,.contact-form textarea{
+    font-family:'Inter',sans-serif;font-size:.92rem;padding:.6rem .8rem;border-radius:10px;
+    border:1px solid #2C4A7A;background:#0F2244;color:#fff;resize:vertical;
+  }
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:#7C8FAE}
+  .contact-form button{margin-top:.3rem;justify-self:start}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
+  footer{background:var(--ink);color:#8298B8;padding:1.6rem 0;font-size:.85rem}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .footer-inner a{color:var(--mint);text-decoration:none;font-weight:600}
+  .footer-inner a:hover{text-decoration:underline}
+  @media(max-width:620px){.footer-inner{flex-direction:column;text-align:center}}
+  /* ---------- WhatsApp flotante ---------- */
+  .whatsapp-float{
+    position:fixed;bottom:22px;right:22px;z-index:60;
+    width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(19,34,62,.28);
+    animation:wa-pulse 2.4s ease-in-out infinite;
+  }
+  .whatsapp-float:hover{background:#1EBE5A}
+  @keyframes wa-pulse{
+    0%,100%{box-shadow:0 6px 20px rgba(19,34,62,.28)}
+    50%{box-shadow:0 6px 20px rgba(19,34,62,.28), 0 0 0 8px rgba(37,211,102,.18)}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="#inicio">Rosina Bastidas</a>
+    <button class="menu-btn" aria-label="Abrir menú" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#capacitaciones">Capacitaciones</a></li>
+      <li><a href="#talleres-fotos">En el aula</a></li>
+      <li><a href="#trayectoria">Trayectoria</a></li>
+      <li><a class="nav-cta" href="#contacto">Trabajemos juntos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="blob blob-pink" aria-hidden="true"></div>
+  <div class="blob blob-blue" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Formadora docente · TIC e IA</span>
+      <h1>Llevá la <em>inteligencia artificial</em> a tu institución, con propósito.</h1>
+      <p class="lead">Soy Rosina Bastidas, Licenciada en Tecnología Educativa y Magíster en Enseñanza en Escenarios Digitales. Capacito a docentes e instituciones para integrar herramientas digitales e IA desde un enfoque humano, práctico y centrado en el estudiante.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#capacitaciones">Ver capacitaciones</a>
+        <a class="btn btn-ghost" href="#contacto">Solicitar propuesta</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>+10</b><small>años formando docentes</small></div>
+        <div class="stat"><b>4</b><small>provincias alcanzadas</small></div>
+        <div class="stat"><b>100%</b><small>enfoque práctico</small></div>
+      </div>
+    </div>
+    <div class="hero-photo" aria-hidden="true">
+      <img src="images/rosina-hero.jpg" alt="Rosina Bastidas dando una charla sobre innovación educativa">
+      <span class="hero-photo-badge">👩🏽‍💻 Formadora TIC e IA</span>
+    </div>
+  </div>
+</header>
+
+<div class="trustbar">
+  <div class="wrap trustbar-inner">
+    <span class="trustbar-label">Colaboré con</span>
+    <div class="trustbar-items">
+      <img class="trustbar-logo" src="images/logo-tributic.png" alt="Tributic .edu">
+      <img class="trustbar-logo" src="images/logo-conecta-argentina.png" alt="Conecta Argentina">
+      <img class="trustbar-logo" src="images/logo-teach-for-all.png" alt="Teach For All — A Global Network">
+      <img class="trustbar-logo" src="images/logo-sadop.png" alt="SADOP">
+      <img class="trustbar-logo" src="images/logo-chubut-oportunidades.png" alt="Oportunidades — Chubut Aprende, Secundaria">
+      <span>Ministerio de Educación Neuquén</span>
+    </div>
+  </div>
+</div>
+
+<section id="sobre-mi">
+  <div class="wrap">
+    <span class="eyebrow">Sobre mí</span>
+    <h2 class="section-title">Tecnología con mirada pedagógica</h2>
+    <div class="about-grid">
+      <div>
+        <div class="profile-card">
+                    <div>
+            <div class="profile-name">Rosina Bastidas</div>
+            <div class="profile-role">EdTech & IA · Neuquén, Argentina</div>
+          </div>
+        </div>
+        <p>Con más de 10 años de experiencia capacitando a educadores en el uso transformador de las TIC, me especializo en formación docente y metodologías activas, diseñando recursos y experiencias de aprendizaje que potencian la práctica pedagógica. Soy Lablead de la AI LCC de Global Institute, Teach for All.</p>
+        <p>Mi pasión es contribuir a una educación de calidad que brinde oportunidades reales a todos los niños, niñas y jóvenes. La actualización docente es clave para construir aulas más inclusivas, innovadoras y significativas.</p>
+        <p>Trabajo con instituciones educativas y docentes de todos los niveles, acompañándolos en su transformación digital desde un enfoque humano, práctico y centrado en el estudiante.</p>
+      </div>
+      <ul class="pill-list">
+        <li><span>👩🏽‍💻</span>Formación docente en herramientas digitales e IA</li>
+        <li><span>🎨</span>Creación de contenido y materiales educativos</li>
+        <li><span>💡</span>Diseño instruccional y experiencias de aprendizaje</li>
+        <li><span>🎯</span>Recursos interactivos y gamificación</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="capacitaciones">
+  <div class="wrap">
+    <span class="eyebrow">Servicios</span>
+    <h2 class="section-title">Capacitaciones y talleres</h2>
+    <p class="section-intro">Propuestas de formación listas para implementar en tu institución, adaptables en duración, modalidad y nivel. Consultá disponibilidad y presupuesto sin compromiso.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icon-circle">🤖</div>
+        <h3>IA para docentes: de cero al aula</h3>
+        <p>Taller práctico para dominar asistentes de IA (Claude, ChatGPT): prompts efectivos, planificación asistida, generación de ejercicios y revisión crítica de resultados.</p>
+        <div class="tag-row"><span class="tag">Taller</span><span class="tag">Presencial / Virtual</span><span class="tag warn">Más solicitado</span></div>
+        <a class="btn btn-primary" href="mailto:lic.rosinabastidas@gmail.com?subject=Consulta%20%E2%80%94%20Taller%20IA%20para%20docentes">Consultar propuesta</a>
+      </div>
+      <div class="card">
+        <div class="icon-circle">🧩</div>
+        <h3>STEAM y pensamiento computacional</h3>
+        <p>Programación en bloques, robótica educativa con Micro:bit y proyectos multidisciplinares con implementación real en el aula.</p>
+        <div class="tag-row"><span class="tag">Curso</span><span class="tag">Híbrido</span></div>
+        <a class="btn btn-primary" href="mailto:lic.rosinabastidas@gmail.com?subject=Consulta%20%E2%80%94%20Curso%20STEAM%20y%20pensamiento%20computacional">Consultar propuesta</a>
+      </div>
+      <div class="card">
+        <div class="icon-circle">🎮</div>
+        <h3>Evaluación gamificada y herramientas digitales</h3>
+        <p>Estrategias y plataformas para evaluar de forma motivadora: rúbricas digitales, juegos de aula y seguimiento del aprendizaje.</p>
+        <div class="tag-row"><span class="tag">Taller</span><span class="tag">Presencial / Virtual</span></div>
+        <a class="btn btn-primary" href="mailto:lic.rosinabastidas@gmail.com?subject=Consulta%20%E2%80%94%20Taller%20de%20evaluaci%C3%B3n%20gamificada">Consultar propuesta</a>
+      </div>
+      <div class="card">
+        <div class="icon-circle">📚</div>
+        <h3>Diseño instruccional</h3>
+        <p>Creación de cursos virtuales, programas de formación y secuencias didácticas con enfoque en competencias digitales.</p>
+        <div class="tag-row"><span class="tag">Proyecto a medida</span></div>
+        <a class="btn btn-primary" href="mailto:lic.rosinabastidas@gmail.com?subject=Consulta%20%E2%80%94%20Dise%C3%B1o%20instruccional">Consultar propuesta</a>
+      </div>
+      <div class="card">
+        <div class="icon-circle">🎬</div>
+        <h3>Producción de contenido educativo</h3>
+        <p>Videos tutoriales, infografías, presentaciones interactivas y materiales multimedia para el aprendizaje.</p>
+        <div class="tag-row"><span class="tag">Proyecto a medida</span></div>
+        <a class="btn btn-primary" href="mailto:lic.rosinabastidas@gmail.com?subject=Consulta%20%E2%80%94%20Producci%C3%B3n%20de%20contenido%20educativo">Consultar propuesta</a>
+      </div>
+      <div class="card">
+        <div class="icon-circle">🧭</div>
+        <h3>Asesoría pedagógica digital</h3>
+        <p>Acompañamiento personalizado para la transformación digital de instituciones educativas: diagnóstico, plan de acción y seguimiento.</p>
+        <div class="tag-row"><span class="tag">Mensual o por etapa</span></div>
+        <a class="btn btn-primary" href="mailto:lic.rosinabastidas@gmail.com?subject=Consulta%20%E2%80%94%20Asesor%C3%ADa%20pedag%C3%B3gica%20digital">Consultar propuesta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="talleres-fotos">
+  <div class="wrap">
+    <span class="eyebrow">En el aula</span>
+    <h2 class="section-title">Talleres en acción</h2>
+    <p class="section-intro">Así se ven las capacitaciones en la práctica.</p>
+    <div class="polaroid-gallery">
+      <figure class="polaroid">
+        <img src="images/taller-sadop-lincoln.jpg" loading="lazy" alt="Rosina Bastidas dando una charla en un encuentro con SADOP y Colegio Lincoln">
+        <figcaption>Herramientas digitales y gamificación</figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img src="images/taller-robotica.jpg" loading="lazy" alt="Taller de robótica y electrónica creativa con docentes">
+        <figcaption>Taller de robótica</figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img src="images/taller-steam.jpg" loading="lazy" alt="Taller de pensamiento computacional con docentes">
+        <figcaption>STEAM en el aula</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="trayectoria">
+  <div class="wrap">
+    <span class="eyebrow">Trayectoria</span>
+    <h2 class="section-title">Programas de formación realizados</h2>
+    <div class="track">
+      <div class="track-item">
+        <div>
+          <h3>Inteligencia Artificial para el ciclo superior de la escuela primaria</h3>
+          <p>Capacitación dirigida a docentes en formación y docentes de 3er ciclo de nivel primario. IFD N° 11, Rincón de los Sauces.</p>
+        </div>
+        <span class="impact">Docentes en formación · 3er ciclo</span>
+      </div>
+      <div class="track-item">
+        <div>
+          <h3>Excel Intermedio</h3>
+          <p>Capacitación in-company para personal de diversas áreas, organizada por Fundación Potenciar para Oilstone.</p>
+        </div>
+        <span class="impact">Fundación Potenciar × Oilstone · 2024</span>
+      </div>
+      <div class="track-item">
+        <div>
+          <h3>Herramientas digitales para el aula y evaluación gamificada</h3>
+          <p>Formación presencial para docentes de escuelas secundarias de Neuquén. Certificado por FAHU UNCo.</p>
+        </div>
+        <span class="impact">30 profesores</span>
+      </div>
+      <div class="track-item">
+        <div>
+          <h3>STEAM en el aula: estrategias para una enseñanza multidisciplinar</h3>
+          <p>Curso con instancias presenciales y virtuales para docentes de nivel primario. Certificado por FAHU UNCo.</p>
+        </div>
+        <span class="impact">Proyectos en aulas reales</span>
+      </div>
+      <div class="track-item">
+        <div>
+          <h3>Taller virtual de programación para docentes — Scratch</h3>
+          <p>Programa online con actividades prácticas y material de consulta.</p>
+        </div>
+        <span class="impact">Neuquén · Chubut · Córdoba · Entre Ríos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">¡Trabajemos juntos!</h2>
+      <p class="section-intro">¿Buscás capacitación para tu equipo docente? ¿Necesitás diseñar una experiencia de aprendizaje innovadora? Me encantaría conocer tu proyecto y acompañarte en la transformación educativa que tu institución necesita.</p>
+      <ul class="contact-links">
+        <li>💬 <a href="https://wa.me/5492995322625?text=Hola%20Rosina%2C%20quiero%20consultarte%20sobre%20una%20capacitaci%C3%B3n" target="_blank" rel="noopener">WhatsApp — +54 9 2995 32-2625</a></li>
+        <li>📧 <a href="mailto:lic.rosinabastidas@gmail.com">lic.rosinabastidas@gmail.com</a></li>
+        <li>💼 <a href="https://www.linkedin.com/in/rosina-bastidas/" target="_blank" rel="noopener">LinkedIn — @rosina-bastidas</a></li>
+      </ul>
+    </div>
+    <div class="contact-box">
+      <h3>Solicitá una propuesta</h3>
+      <p>Contame qué necesita tu institución y te envío una propuesta a medida en menos de 48 hs.</p>
+      <form class="contact-form" id="propuesta-form">
+        <label>Nombre<input type="text" name="nombre" required></label>
+        <label>Institución<input type="text" name="institucion"></label>
+        <label>Modalidad
+          <select name="modalidad">
+            <option value="Presencial">Presencial</option>
+            <option value="Virtual">Virtual</option>
+            <option value="Híbrida">Híbrida</option>
+            <option value="No estoy segura/o">No estoy segura/o todavía</option>
+          </select>
+        </label>
+        <label>Contame brevemente qué necesitás<textarea name="mensaje" rows="3"></textarea></label>
+        <button type="submit" class="btn btn-primary">Enviar consulta</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('propuesta-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const f = new FormData(this);
+    const nombre = f.get('nombre') || '';
+    const institucion = f.get('institucion') || '(no especificada)';
+    const modalidad = f.get('modalidad') || '';
+    const mensaje = f.get('mensaje') || '(sin detalle adicional)';
+    const cuerpo = `Nombre: ${nombre}\nInstitución: ${institucion}\nModalidad preferida: ${modalidad}\n\n${mensaje}`;
+    const asunto = 'Solicitud de propuesta de capacitación';
+    window.location.href = `mailto:lic.rosinabastidas@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+  });
+</script>
+
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Rosina Bastidas — Educación · Innovación · Tecnología</span>
+    <a href="https://rosinabastidas-glitch.github.io/digital-lab/" target="_blank" rel="noopener">Ver mis proyectos en Digital Lab →</a>
+  </div>
+</footer>
+
+<script>
+  // Cerrar el menú móvil al elegir una sección
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open'));
+  });
+</script>
+<a class="whatsapp-float" href="https://wa.me/5492995322625?text=Hola%20Rosina%2C%20quiero%20consultarte%20sobre%20una%20capacitaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.386.7 4.61 1.906 6.478L4 29l7.72-1.865A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.818c-1.98 0-3.837-.55-5.42-1.503l-.389-.23-4.58 1.106 1.128-4.463-.253-.398A9.78 9.78 0 0 1 5.19 15c0-5.965 4.85-10.818 10.814-10.818 5.965 0 10.814 4.853 10.814 10.818 0 5.965-4.85 10.818-10.814 10.818zm5.94-8.106c-.325-.163-1.92-.947-2.218-1.056-.298-.108-.515-.163-.732.163-.217.325-.84 1.056-1.03 1.273-.19.217-.38.244-.705.081-.325-.163-1.372-.505-2.613-1.610-.966-.86-1.618-1.923-1.808-2.248-.19-.325-.02-.5.143-.663.147-.146.325-.38.488-.57.163-.19.217-.325.325-.542.108-.217.054-.407-.027-.57-.081-.163-.732-1.763-1.003-2.414-.264-.634-.532-.548-.732-.558-.19-.009-.407-.011-.624-.011-.217 0-.57.081-.868.407-.298.325-1.138 1.112-1.138 2.712 0 1.6 1.165 3.146 1.328 3.363.163.217 2.294 3.504 5.56 4.913.777.336 1.383.536 1.856.686.78.248 1.489.213 2.05.129.625-.093 1.92-.785 2.19-1.543.271-.759.271-1.409.19-1.544-.081-.135-.298-.217-.623-.38z"/></svg>
+</a>
+</body>
+</html>
